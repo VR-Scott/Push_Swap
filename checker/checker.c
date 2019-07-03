@@ -6,11 +6,26 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 07:45:06 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/02 16:34:54 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/03 09:30:55 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
+
+static t_list	*ft_getins()
+{
+	char	*line;
+	t_list	*ins;
+
+	if (get_next_line(1, &line) > 0)
+	{
+		ins = ft_lstnew((void*)line, sizeof(char) * ft_strlen(line));
+		ft_strdel(&line);
+		ins->next = ft_getins();
+		return (ins);
+	}
+	return (NULL);
+}
 
 static t_list	*ft_makelst(char **sa)
 {
@@ -36,6 +51,16 @@ static t_list	*ft_makestack(char *str)
 	return (ft_makelst(split));
 }
 
+static void		ft_putslst(t_list *lst)
+{
+	while (lst)
+	{
+		ft_putendl(lst->content);
+		ft_putchar('\n');
+		lst = lst->next;
+	}
+}
+
 static void		ft_putnlst(t_list *lst)
 {
 	while (lst)
@@ -49,6 +74,7 @@ static void		ft_putnlst(t_list *lst)
 int				main(int ac, char **av)
 {
 	t_list	*lst;
+	t_list	*ins;
 	t_list	**head;
 
 	if (ac > 1)
@@ -57,7 +83,9 @@ int				main(int ac, char **av)
 		lst = (ft_makestack(av[1]));
 		head = &lst;
 		ft_putendl("lst");
+		ins = ft_getins();
 		ft_putnlst(*head);
+		ft_putslst(ins);
 	}
 	return (0);
 }
