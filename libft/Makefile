@@ -6,7 +6,7 @@
 #    By: vscott <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/27 14:25:03 by vscott            #+#    #+#              #
-#    Updated: 2019/07/02 11:07:06 by vscott           ###   ########.fr        #
+#    Updated: 2019/07/04 16:53:50 by vscott           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,7 @@ mkcln: all clean
 
 all: $(NAME)
 
-$(NAME) :
+$(NAME):
 	gcc $(FLAGS) -c $(SRC)
 	ar rcs $(NAME) $(OBJ)
 	ranlib $(NAME)

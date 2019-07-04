@@ -6,13 +6,14 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 07:45:06 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/04 09:07:58 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/04 15:49:10 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 
 void    ft_swap(t_list **alst);
+void	rot(t_list **alst);
 
 static t_list	*ft_getins()
 {
@@ -88,6 +89,10 @@ int				main(int ac, char **av)
 		ft_putnlst(*heada);
 		ft_putslst(ins);
 		ft_swap(heada);
+		ft_putendl("after swap:");
+		ft_putnlst(*heada);
+		rot(heada);
+		ft_putendl("after rot:");
 		ft_putnlst(*heada);
 	}
 	return (0);
