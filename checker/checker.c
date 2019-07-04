@@ -6,11 +6,13 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 07:45:06 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/03 17:04:20 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/04 09:07:58 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
+
+void    ft_swap(t_list **alst);
 
 static t_list	*ft_getins()
 {
@@ -60,7 +62,7 @@ static void		ft_putslst(t_list *lst)
 	}
 }
 
-/*static void		ft_putnlst(t_list *lst)
+static void		ft_putnlst(t_list *lst)
 {
 	while (lst)
 	{
@@ -68,23 +70,25 @@ static void		ft_putslst(t_list *lst)
 		ft_putchar('\n');
 		lst = lst->next;
 	}
-}*/
+}
 
 int				main(int ac, char **av)
 {
 	t_list	*lst;
 	t_list	*ins;
-	t_list	**head;
+	t_list	**heada;
 
 	if (ac > 1)
 	{
 //		ft_putendl(av[1]);
 		lst = (ft_makestack(av[1]));
-		head = &lst;
+		heada = &lst;
 //		ft_putendl("lst");
 		ins = ft_getins();
-//		ft_putnlst(*head);
+		ft_putnlst(*heada);
 		ft_putslst(ins);
+		ft_swap(heada);
+		ft_putnlst(*heada);
 	}
 	return (0);
 }
