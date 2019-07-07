@@ -6,11 +6,11 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 16:48:56 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/07 11:10:05 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/07 13:05:50 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
+#include "libft.h"
 
 void	ft_lstswap(t_list **alst)
 {
