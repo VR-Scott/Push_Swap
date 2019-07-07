@@ -6,7 +6,7 @@
 #    By: vscott <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/27 14:25:03 by vscott            #+#    #+#              #
-#    Updated: 2019/07/07 11:01:11 by vscott           ###   ########.fr        #
+#    Updated: 2019/07/07 15:38:34 by vscott           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,9 @@ SRC 	=	ft_atoi.c\
 			ft_lstiter.c\
 			ft_lstmap.c\
 			ft_lstnew.c\
+			ft_lstpush.c\
 			ft_lstrot.c\
+			ft_lstrrot.c\
 			ft_lstswap.c\
 			ft_memalloc.c\
 			ft_memccpy.c\
@@ -47,6 +49,8 @@ SRC 	=	ft_atoi.c\
 			ft_putendl_fd.c\
 			ft_putnbr.c\
 			ft_putnbr_fd.c\
+			ft_putnlst.c\
+			ft_putslst.c\
 			ft_putstr.c\
 			ft_putstr_fd.c\
 			ft_strcat.c\

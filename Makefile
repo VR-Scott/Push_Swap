@@ -6,9 +6,13 @@
 #    By: vscott <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/04 16:26:49 by vscott            #+#    #+#              #
-#    Updated: 2019/07/07 13:10:14 by vscott           ###   ########.fr        #
+#    Updated: 2019/07/07 16:58:30 by vscott           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+ARG			=	"pa rb sa rra"
+
+LST			=	"11 22 33 44 55 66"
 
 CHECKER		=	checker
 
@@ -29,7 +33,7 @@ PSSRC		=	$(PSDIR)/$(PUSH_SWAP).c
 
 all: $(NAME) $(CHECKER) $(PUSH_SWAP)
 
-pref: pref$(NAME) $(CHECKER) $(PUSH_SWAP)
+pref: re clean
 
 pref$(NAME): $(NAME) clean
 
@@ -51,3 +55,6 @@ fclean:
 	rm -f $(CHECKER) $(PUSH_SWAP)
 
 re: fclean all
+
+bash:
+	 ./push_swap $(ARG) | ./checker $(LST)

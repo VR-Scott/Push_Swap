@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/19 08:38:25 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/07 11:05:24 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/07 15:39:32 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstnew(void const *content, size_t content_size);
+void				ft_lstpush(t_list **frm, t_list **to);
 void				ft_lstrot(t_list **alst);
+void				ft_lstrrot(t_list **alst);
 void				ft_lstswap(t_list **alst);
 void				*ft_memalloc(size_t size);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
@@ -59,6 +61,8 @@ void				ft_putendl_2d(char **str2d);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr(int n);
 void				ft_putnbr_fd(int n, int fd);
+void				ft_putnlst(t_list *lst);
+void				ft_putslst(t_list *lst);
 void				ft_putstr(char const *s);
 void				ft_putstr_fd(char const *s, int fd);
 char				*ft_strcat(char *s1, const char *s2);
