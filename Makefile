@@ -6,7 +6,7 @@
 #    By: vscott <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/04 16:26:49 by vscott            #+#    #+#              #
-#    Updated: 2019/07/07 10:23:02 by vscott           ###   ########.fr        #
+#    Updated: 2019/07/07 13:10:14 by vscott           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,6 @@ PSDIR		=	push_swap_dir
 FLAGS		=	-Wall -Werror -Wextra
 
 CHSRC		=	$(CHDIR)/$(CHECKER).c\
-				$(CHDIR)/swap.c\
-				$(CHDIR)/rot.c
 
 PSSRC		=	$(PSDIR)/$(PUSH_SWAP).c
 
