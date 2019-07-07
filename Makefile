@@ -6,7 +6,7 @@
 #    By: vscott <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/04 16:26:49 by vscott            #+#    #+#              #
-#    Updated: 2019/07/04 17:16:58 by vscott           ###   ########.fr        #
+#    Updated: 2019/07/07 10:23:02 by vscott           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,89 +16,40 @@ PUSH_SWAP	=	push_swap
 
 NAME		=	libft.a
 
+CHDIR		=	checker_dir
+
+LIBDIR		=	libft
+PSDIR		=	push_swap_dir
+
 FLAGS		=	-Wall -Werror -Wextra
 
-SRC 		=	ft_atoi.c\
-				ft_bzero.c\
-				ft_freejoin.c\
-				get_next_line.c\
-				ft_isalnum.c\
-				ft_isalpha.c\
-				ft_isascii.c\
-				ft_isdigit.c\
-				ft_isprint.c\
-				ft_itoa.c\
-				ft_lstadd.c\
-				ft_lstdel.c\
-				ft_lstdelone.c\
-				ft_lstiter.c\
-				ft_lstnew.c\
-				ft_lstmap.c\
-				ft_memalloc.c\
-				ft_memccpy.c\
-				ft_memchr.c\
-				ft_memcmp.c\
-				ft_memcpy.c\
-				ft_memdel.c\
-				ft_memmove.c\
-				ft_memset.c\
-				ft_putchar.c\
-				ft_putchar_fd.c\
-				ft_putendl.c\
-				ft_putendl_2d.c\
-				ft_putendl_fd.c\
-				ft_putnbr.c\
-				ft_putnbr_fd.c\
-				ft_putstr.c\
-				ft_putstr_fd.c\
-				ft_strcat.c\
-				ft_strchr.c\
-				ft_strclr.c\
-				ft_strcmp.c\
-				ft_strcpy.c\
-				ft_strdel.c\
-				ft_strdup.c\
-				ft_strequ.c\
-				ft_striter.c\
-				ft_striteri.c\
-				ft_strjoin.c\
-				ft_strlcat.c\
-				ft_strlen.c\
-				ft_strmap.c\
-				ft_strmapi.c\
-				ft_strncat.c\
-				ft_strncmp.c\
-				ft_strncpy.c\
-				ft_strnequ.c\
-				ft_strnew.c\
-				ft_strnstr.c\
-				ft_strrchr.c\
-				ft_strsplit.c\
-				ft_strstr.c\
-				ft_strsub.c\
-				ft_strtrim.c\
-				ft_tolower.c\
-				ft_toupper.c
+CHSRC		=	$(CHDIR)/$(CHECKER).c\
+				$(CHDIR)/swap.c\
+				$(CHDIR)/rot.c
 
-CHSRC		=	checker/checker.c
+PSSRC		=	$(PSDIR)/$(PUSH_SWAP).c
 
-PSSRC		=	push_swap/push_swap.c
+all: $(NAME) $(CHECKER) $(PUSH_SWAP)
 
-OBJ			=	$(SRC:%.c=%.o)
+pref: pref$(NAME) $(CHECKER) $(PUSH_SWAP)
 
-CHOBJ		=	$(CHSRC:%.c=%.o)
+pref$(NAME): $(NAME) clean
 
-PSOBJ		=	$(PSSRC:%.c=%.o)
 
 $(NAME):
-	gcc $(FLAGS) -c $(SRC)
-	ar rcs $(NAME) $(OBJ)
-	ranlib $(NAME)
+	$(MAKE) -C $(LIBDIR)/
 
 $(CHECKER):
-	gcc $(FLAGS) -o $(CHECKER) $(CHSRC) 
+	gcc $(FLAGS) -o $(CHECKER) $(CHSRC) $(LIBDIR)/$(NAME) 
 
 $(PUSH_SWAP):
-	gcc $(FLAGS) -o $(PUSH_SWAP) $(PSSRC)
+	gcc $(FLAGS) -o $(PUSH_SWAP) $(PSSRC) $(LIBDIR)/$(NAME)
 
-clean: rm irf
+clean:
+	$(MAKE) clean -C $(LIBDIR)/
+
+fclean:
+	$(MAKE) fclean -C $(LIBDIR)/
+	rm -f $(CHECKER) $(PUSH_SWAP)
+
+re: fclean all
