@@ -6,13 +6,17 @@
 #    By: vscott <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/04 16:26:49 by vscott            #+#    #+#              #
-#    Updated: 2019/07/07 16:58:30 by vscott           ###   ########.fr        #
+#    Updated: 2019/07/08 17:08:23 by vscott           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-ARG			=	"pa rb sa rra"
+ARG			=	"pb pb ss ra ra pa rra rra pa"
 
-LST			=	"11 22 33 44 55 66"
+LST			=	"44 11 33 22 55 "
+
+DOINS		=	ft_doins
+
+CHECK		=	ft_check
 
 CHECKER		=	checker
 
@@ -28,6 +32,8 @@ PSDIR		=	push_swap_dir
 FLAGS		=	-Wall -Werror -Wextra
 
 CHSRC		=	$(CHDIR)/$(CHECKER).c\
+				$(CHDIR)/$(DOINS).c\
+				$(CHDIR)/$(CHECK).c
 
 PSSRC		=	$(PSDIR)/$(PUSH_SWAP).c
 

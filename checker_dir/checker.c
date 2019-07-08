@@ -6,11 +6,12 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 07:45:06 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/07 17:24:17 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/08 16:51:27 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
+#include "ps.h"
 
 static t_list	*ft_getins(void)
 {
@@ -64,27 +65,19 @@ int				main(int ac, char **av)
 //		ft_putendl(av[1]);
 		lst = (ft_makestack(av[1]));
 		heada = lst;
-//		ft_putendl("lst");
+		ft_putendl("head a:");
+		ft_putnlst(heada);
+		ft_putendl("head b:");
+		ft_putnlst(headb);
 		ft_putendl("ins:");
 		ins = ft_getins();
-		ft_putnlst(heada);
-		ft_putendl("lst:");
 		ft_putslst(ins);
-		ft_lstswap(&heada);
-		ft_putendl("after swap:");
+		ft_doins(&heada, &headb, ins);
+		ft_putendl("heada after ins:");
 		ft_putnlst(heada);
-		ft_lstrot(&heada);
-		ft_putendl("after rot:");
-		ft_putnlst(heada);
-		ft_lstrrot(&heada);
-		ft_putendl("after rrot:");
-		ft_putnlst(heada);
-		ft_lstpush(&heada, &headb);
-		ft_putendl("heada pushb:");
-		ft_putnlst(heada);
-		ft_putendl("headb pushb:");
+		ft_putendl("headb after ins:");
 		ft_putnlst(headb);
-
+		ft_check(&heada, &headb);
 	}
 	return (0);
 }
