@@ -6,7 +6,7 @@
 #    By: vscott <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/27 14:25:03 by vscott            #+#    #+#              #
-#    Updated: 2019/07/07 15:38:34 by vscott           ###   ########.fr        #
+#    Updated: 2019/07/16 10:44:00 by vscott           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME	=	libft.a
 FLAGS	=	-Wall -Werror -Wextra
 
 SRC 	=	ft_atoi.c\
+			ft_atoll.c\
 			ft_bzero.c\
 			ft_freejoin.c\
 			get_next_line.c\

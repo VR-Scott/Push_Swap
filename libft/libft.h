@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/19 08:38:25 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/07 15:39:32 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/16 10:44:11 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct		s_list
 }					t_list;
 
 int					ft_atoi(const char *str);
+long long 			ft_atoll(const char *str);
 void				ft_bzero(void *s, size_t n);
 char				*ft_freejoin(char *tofr, char *tokp);
 int					get_next_line(const int fd, char **line);

@@ -6,16 +6,16 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 16:30:21 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/15 17:31:35 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/16 09:16:32 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft.h"
-#define MAX_INT 2147483647
-#define MIN_INT -2147483648
+# include "libft/libft.h"
+# define MAX_INT 2147483647
+# define MIN_INT -2147483648
 
 typedef struct	s_stacks
 {
@@ -34,4 +34,8 @@ typedef struct	s_moves
 	char		*b_rt;
 	char		*c_rt;
 	int			tot;
-}				s_moves;
+}				t_moves;
+
+void		make_stacks(/*t_stacks *stacks, */char *str);
+
+#endif

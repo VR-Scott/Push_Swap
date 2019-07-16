@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/15 16:52:13 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/16 09:17:17 by vscott           ###   ########.fr       */
+/*   Created: 2019/05/23 15:55:31 by vscott            #+#    #+#             */
+/*   Updated: 2019/07/16 10:42:20 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+long long ft_atoll(const char *str)
 {
-//	t_stacks	*stacks;
+	long long ret;
+	long long sign;
 
-	if (ac > 1)
-		{
-//			stacks = (t_stacks*)malloc(sizeof(t_stacks));
-			make_stacks(/*stacks, */av[1]);
-		}
-	return (0);
+	ret = 0;
+	sign = 1;
+	while (*str == ' ' || *str == '\n' || *str == '\t'
+			|| *str == '\r' || *str == '\v' || *str == '\f')
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign *= -1;
+		str++;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		ret = ret * 10 + *str - '0';
+		str++;
+	}
+	return (ret * sign);
 }
