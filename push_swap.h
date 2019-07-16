@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 16:30:21 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/16 09:16:32 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/16 12:31:51 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 
 typedef struct	s_stacks
 {
-	int			*stk_a;
-	int			*stk_b;
-	int			*a_sz;
-	int			*b_sz;
+	int			*stack_a;
+	int			*stack_b;
+	int			a_size;
+	int			b_size;
 }				t_stacks;
 
 typedef struct	s_moves
@@ -36,6 +36,12 @@ typedef struct	s_moves
 	int			tot;
 }				t_moves;
 
-void		make_stacks(/*t_stacks *stacks, */char *str);
+/* make_stacks.c*/
+
+void		make_stacks(t_stacks *stacks, char *str);
+
+/* struct_frees */
+
+void		free_stacks(t_stacks *stacks);
 
 #endif

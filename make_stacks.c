@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 17:11:06 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/16 10:55:26 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/16 12:34:55 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	split_count(char **split)
 	return (count);
 }
 
-static void	validate_int(char **split, char *nbr, int bgn)
+static int	validate_int(char **split, char *nbr, int bgn)
 {
 	int i;
 
@@ -50,7 +50,7 @@ static void	validate_int(char **split, char *nbr, int bgn)
 	return (1);
 }
 
-void		make_stacks(/*t_stacks *stacks, */char *str)
+void		make_stacks(t_stacks *stacks, char *str)
 {
 	char	**split;
 	int		count;
@@ -60,17 +60,22 @@ void		make_stacks(/*t_stacks *stacks, */char *str)
 	split = ft_strsplit(str, ' ');
 	count = split_count(split);
 	ft_putnbr(count);			// Delete me!!
+	ft_putchar('\n');
 	stacks->stack_a = (int*)malloc(sizeof(int) * count);
 	stacks->stack_b = (int*)ft_memalloc(sizeof(int) * count);
-	stack->a_size = count;
-	stack->b_size = 0;
+	stacks->a_size = count;
+	stacks->b_size = 0;
 	while (i < count)
 	{
 		if (validate_int(split, split[i], i + 1))
 			stacks->stack_a[i] = ft_atoi(split[i]);
 		else
 		{
-			free_stack
+			free_stacks(stacks);
+			ft_putstr_fd("Error\n", 2);
+			exit(1);
 		}
+		i++;
 	}
+	//May need to return stack
 }
