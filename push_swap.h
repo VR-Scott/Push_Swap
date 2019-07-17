@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 16:30:21 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/16 12:31:51 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/17 16:58:38 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,46 @@ typedef struct	s_moves
 	int			tot;
 }				t_moves;
 
+/* push_swap.h */			//DElete this and the function.
+
+void	ft_print_stacks(t_stacks *stacks);
+
 /* make_stacks.c*/
 
 void		make_stacks(t_stacks *stacks, char *str);
 
-/* struct_frees */
+/* struct_mans */
 
+int			is_sorted(int *stack, int size);
 void		free_stacks(t_stacks *stacks);
+
+/* apply_ins.c */
+
+void		apply_sa(t_stacks *stacks);
+void		apply_sb(t_stacks *stacks);
+void		apply_ss(t_stacks *stacks);
+void		apply_pa(t_stacks *stacks);
+void		apply_pb(t_stacks *stacks);
+
+/* sort.c */
+
+void		sort(t_stacks *stacks);
+
+/* sort_help.c */
+
+int			find_max(int *stack, int size);
+int			find_min(int *stack, int size);
+
+/* apply_rr.c */
+
+void	apply_ra(t_stacks *stacks);
+void	apply_rb(t_stacks *stacks);
+void	apply_rr(t_stacks *stacks);
+
+/* apply_rrr.c */
+
+void	apply_rra(t_stacks *stacks);
+void	apply_rrb(t_stacks *stacks);
+void	apply_rrr(t_stacks *stacks);
 
 #endif
