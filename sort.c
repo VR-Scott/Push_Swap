@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 11:52:22 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/17 15:35:44 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/18 11:24:07 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,6 @@ void		sort(t_stacks *stacks)
 		return ;
 	if (stacks->a_size <= 3)
 		return (sort_3(stacks));
+	else
+		large_sort(stacks);
 }

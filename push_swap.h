@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 16:30:21 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/17 16:58:38 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/18 09:58:40 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,14 @@ typedef struct	s_stacks
 
 typedef struct	s_moves
 {
-	int			a_mvs;
-	int			b_mvs;
-	int			c_mvs;
-	char		*a_rt;
-	char		*b_rt;
-	char		*c_rt;
+	int			a_moves;
+	int			b_moves;
+	int			c_moves;
 	int			tot;
+	int			elem;
+	char		*a_rot;
+	char		*b_rot;
+	char		*c_rot;
 }				t_moves;
 
 /* push_swap.h */			//DElete this and the function.
@@ -77,5 +78,10 @@ void	apply_rr(t_stacks *stacks);
 void	apply_rra(t_stacks *stacks);
 void	apply_rrb(t_stacks *stacks);
 void	apply_rrr(t_stacks *stacks);
+
+/* find_rot.c */
+
+int	find_a_rot(int len, int pos, char **rot);
+int	find_b_rot(int len, int pos, char **rot);
 
 #endif
