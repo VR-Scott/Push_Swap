@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 11:53:29 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/17 15:20:16 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/18 12:21:18 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,13 @@ void	free_stacks(t_stacks *stacks)
 	free(stacks->stack_b);
 	free(stacks);
 	stacks = NULL;
+}
+
+void	free_moves(t_moves *moves)
+{
+	free(moves->a_rot);
+	free(moves->b_rot);
+	free(moves->c_rot);
+	free(moves);
+	moves = NULL;
 }

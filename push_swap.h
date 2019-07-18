@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 16:30:21 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/18 09:58:40 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/18 12:23:46 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void		make_stacks(t_stacks *stacks, char *str);
 
 int			is_sorted(int *stack, int size);
 void		free_stacks(t_stacks *stacks);
+void		free_moves(t_moves *moves);
 
 /* apply_ins.c */
 
@@ -83,5 +84,9 @@ void	apply_rrr(t_stacks *stacks);
 
 int	find_a_rot(int len, int pos, char **rot);
 int	find_b_rot(int len, int pos, char **rot);
+
+/* large_sort.c */
+
+void	large_sort(t_stacks *stacks);
 
 #endif
