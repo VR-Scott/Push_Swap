@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 08:55:39 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/18 12:22:50 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/19 12:47:14 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ static int		find_place_b(int *stack, int size, int elem, char **rot)
 	else
 		while (i < size)
 		{
-			if (elem < stack[i] && ((i + 1 < size && elem > stack[i + 1])) ||
-					(i + 1 == size && elem > stack[0]))
+			if (elem < stack[i] && ((i + 1 < size && elem > stack[i + 1]) ||
+					(i + 1 == size && elem > stack[0])))
 			{
 				place = i + 1;
 				break ;
@@ -40,7 +40,7 @@ static int		find_place_b(int *stack, int size, int elem, char **rot)
 	return (find_b_rot(size, place, rot));
 }
 
-static t_moves	find_common(t_moves *moves)
+static int		find_common(t_moves *moves)
 {
 	int	com;
 
@@ -63,7 +63,7 @@ static t_moves	find_common(t_moves *moves)
 
 static t_moves	*calc_moves_a_2_b(t_stacks *stacks, int pos)
 {
-	t_moves;
+	t_moves	*moves;
 
 	moves = (t_moves*)malloc(sizeof(t_moves));
 	moves->a_rot = ft_strnew(3);
@@ -74,7 +74,7 @@ static t_moves	*calc_moves_a_2_b(t_stacks *stacks, int pos)
 	moves->b_moves = find_place_b(stacks->stack_b, stacks->b_size,
 			stacks->stack_a[pos], &(moves->b_rot));
 	moves->c_moves = find_common(moves);
-	moves->total = moves->a_moves + moves->b_moves + moves->c_moves + 1;
+	moves->tot = moves->a_moves + moves->b_moves + moves->c_moves + 1;
 	return (moves);
 }
 
@@ -91,9 +91,14 @@ t_moves			*least_moves_a_2_b(t_stacks *stacks)
 		moves = calc_moves_a_2_b(stacks, i);
 		if (i == 0)
 			best_moves = moves;
-		else if (best_moves->total > moves->total)
+		else if (best_moves->tot > moves->tot)
 		{
 			free_moves(best_moves);
+			best_moves = moves;
 		}
+		else
+			free_moves(moves);
+		i++;
 	}
+	return (best_moves);
 }

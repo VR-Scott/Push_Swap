@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 16:52:13 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/17 17:10:43 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/19 16:49:45 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,11 @@ int	main(int ac, char **av)
 		{
 			stacks = (t_stacks*)malloc(sizeof(t_stacks));
 			make_stacks(stacks, av[1]); // May need to return stack.
-			ft_print_stacks(stacks);
+//			ft_print_stacks(stacks);
 			sort(stacks);
-			ft_print_stacks(stacks);
+//			ft_print_stacks(stacks);
 			free_stacks(stacks);
 		}
+	sleep(45);
 	return (0);
 }

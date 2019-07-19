@@ -6,11 +6,25 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 17:11:06 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/17 17:11:55 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/19 16:49:01 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void		free_split(char **split)
+{
+	int	i;
+
+	i = 0;
+	if (split)
+	{
+		while (split[i])
+			free(split[i++]);
+		free(split);
+		split = NULL;
+	}
+}
 
 static int	split_count(char **split)
 {
@@ -59,8 +73,6 @@ void		make_stacks(t_stacks *stacks, char *str)
 	i = 0;
 	split = ft_strsplit(str, ' ');
 	count = split_count(split);
-	ft_putnbr(count);			// Delete me!!
-	ft_putchar('\n');
 	stacks->stack_a = (int*)malloc(sizeof(int) * count);
 	stacks->stack_b = (int*)ft_memalloc(sizeof(int) * count);
 	stacks->a_size = count;
@@ -77,5 +89,6 @@ void		make_stacks(t_stacks *stacks, char *str)
 		}
 		i++;
 	}
+	free_split(split);
 	//May need to return stack
 }

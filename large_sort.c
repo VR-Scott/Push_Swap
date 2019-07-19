@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 08:41:50 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/19 10:25:39 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/19 16:49:34 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ int			find_a_place(int *stack, int size, int elem, char **rot_type)
 static void push_back(t_stacks *stacks)
 {
 	int		rots;
-	char	rot_type;
+	char	*rot_type;
 
 	rots = 0;
 	rot_type = ft_strnew(3);
-	while (stacks->b_size);
+	while (stacks->b_size)
 	{
 		rots = find_a_place(stacks->stack_a, stacks->a_size,
 				stacks->stack_b[0], &rot_type);
@@ -104,12 +104,12 @@ static void	process_moves(t_moves *moves, t_stacks *stacks)
 
 void		large_sort(t_stacks *stacks)
 {
-	t_move	*best_moves;
+	t_moves	*best_moves;
 	int		optimiser;
 
 	optimiser = (stacks->a_size > 200)? 50 : 2;
 	while (stacks->b_size != 2)
-		apply_pb(stack);
+		apply_pb(stacks);
 	while (stacks->a_size > optimiser)
 	{
 		best_moves = least_moves_a_2_b(stacks);

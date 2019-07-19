@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 12:44:19 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/17 16:59:48 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/19 15:59:33 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	apply_pb(t_stacks *stacks)
 		stacks->stack_b[i + 1] = stacks->stack_b[i];
 	stacks->stack_b[0] = stacks->stack_a[0];
 	i = 0;
-	while (i++ <= stacks->a_size)
+	while (i++ <= stacks->a_size - 1)
 		stacks->stack_a[i - 1] = stacks->stack_a[i];
 	stacks->b_size++;
 	stacks->a_size--;

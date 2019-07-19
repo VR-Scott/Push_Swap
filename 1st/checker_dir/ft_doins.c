@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 12:43:46 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/08 15:04:55 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/19 15:11:57 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,16 @@ static void	ft_rotins(t_list **heada, t_list **headb, t_list *ins)
 	if (ft_strequ(ins->content, "ra"))
 		ft_lstrot(heada);
 	else if (ft_strequ(ins->content, "rb"))
-		ft_lstrrot(headb);
+		ft_lstrot(headb);
 	else if (ft_strequ(ins->content, "rr"))
 	{
-		ft_lstrrot(headb);
-		ft_lstrrot(heada);
+		ft_lstrot(headb);
+		ft_lstrot(heada);
 	}
 	else if (ft_strequ(ins->content, "rra"))
 		ft_lstrrot(heada);
 	else if (ft_strequ(ins->content, "rrb"))
-		ft_lstrot(headb);
+		ft_lstrrot(headb);
 	else if (ft_strequ(ins->content, "rrr"))
 	{
 		ft_lstrrot(headb);

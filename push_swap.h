@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 16:30:21 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/18 12:23:46 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/19 16:50:20 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void		sort(t_stacks *stacks);
 
 /* sort_help.c */
 
+void		min_first(t_stacks *stacks);
 int			find_max(int *stack, int size);
 int			find_min(int *stack, int size);
 
@@ -88,5 +89,9 @@ int	find_b_rot(int len, int pos, char **rot);
 /* large_sort.c */
 
 void	large_sort(t_stacks *stacks);
+
+/* least_moves_a_2_b.c */
+
+t_moves			*least_moves_a_2_b(t_stacks *stacks);
 
 #endif
