@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 16:52:13 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/19 16:49:45 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/19 17:21:46 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ int	main(int ac, char **av)
 //			ft_print_stacks(stacks);
 			free_stacks(stacks);
 		}
-	sleep(45);
+//	sleep(45);
 	return (0);
 }
