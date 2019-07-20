@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 15:39:03 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/17 16:10:04 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/20 15:04:11 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,11 @@ void	apply_rr(t_stacks *stacks)
 	{
 		i = 1;
 		tmp = stacks->stack_a[0];
-		while (i < stacks->a_size)
+		while (i++ < stacks->a_size)
 		{
-			stacks->stack_a[i - 1] = stacks->stack_a[i];
-			i++;
+			stacks->stack_a[i - 2] = stacks->stack_a[i - 1];
 		}
-		stacks->stack_a[i - 1] = tmp;
+		stacks->stack_a[i - 2] = tmp;
 	}
 	if (stacks->b_size > 1)
 	{

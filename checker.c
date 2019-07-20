@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/20 09:57:53 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/20 11:17:41 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/20 16:34:41 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ static	int	do_rr(t_stacks *stacks, char *in)
 
 static	int	do_ins(t_stacks *stacks, char *in)
 {
-	if (ft_strnequ(in , "rr", 2))
+	if (ft_strnequ(in, "rr", 2))
 	{
-		if(do_rr(stacks, in))
-			return(-1);
+		if (do_rr(stacks, in))
+			return (-1);
 	}
 	else if (ft_strequ(in, "sa"))
 		apply_sa(stacks);
@@ -64,7 +64,7 @@ static void	get_ins(t_stacks *stacks)
 			ft_putstr_fd("Error\n", 2);
 			free_stacks(stacks);
 			free(in);
-			exit (1);
+			exit(1);
 		}
 		free(in);
 		in = NULL;
@@ -76,6 +76,7 @@ static void	get_ins(t_stacks *stacks)
 int			main(int ac, char **av)
 {
 	t_stacks	*stacks;
+
 	if (ac > 1)
 	{
 		stacks = (t_stacks*)malloc(sizeof(t_stacks));

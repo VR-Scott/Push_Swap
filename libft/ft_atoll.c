@@ -6,13 +6,13 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 15:55:31 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/16 10:42:20 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/20 16:36:04 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long long ft_atoll(const char *str)
+long long	ft_atoll(const char *str)
 {
 	long long ret;
 	long long sign;

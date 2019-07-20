@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 11:52:22 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/18 12:23:55 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/20 16:31:15 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static void	sort_3(t_stacks *stacks)
 {
 	int	max_i;
+
 	if (stacks->a_size == 2)
 	{
 		apply_sa(stacks);

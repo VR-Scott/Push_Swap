@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 08:09:56 by vscott            #+#    #+#             */
-/*   Updated: 2019/06/20 15:09:18 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/20 16:37:05 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	const char cc = (char)c;
 
 	if (!s)
-		return NULL;
+		return (NULL);
 	while (*s && *s != cc)
 		++s;
 	if (*s == cc)

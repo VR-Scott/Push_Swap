@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 09:27:04 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/18 12:23:08 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/20 15:51:46 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	find_a_rot(int len, int pos, char **rot)
 	}
 	else
 		*rot = ft_strcpy(*rot, "ra");
-	return(pos);
+	return (pos);
 }
 
 int	find_b_rot(int len, int pos, char **rot)
@@ -35,5 +35,5 @@ int	find_b_rot(int len, int pos, char **rot)
 	}
 	else
 		*rot = ft_strcpy(*rot, "rb");
-	return(pos);
+	return (pos);
 }

@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 17:11:06 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/19 16:49:01 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/20 16:03:39 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,4 @@ void		make_stacks(t_stacks *stacks, char *str)
 		i++;
 	}
 	free_split(split);
-	//May need to return stack
 }

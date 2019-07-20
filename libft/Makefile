@@ -6,7 +6,7 @@
 #    By: vscott <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/27 14:25:03 by vscott            #+#    #+#              #
-#    Updated: 2019/07/16 10:44:00 by vscott           ###   ########.fr        #
+#    Updated: 2019/07/20 12:59:50 by vscott           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,9 +86,10 @@ SRC 	=	ft_atoi.c\
 OBJ		=	$(SRC:%.c=%.o)
 
 
-mkcln: all clean
 
 all: $(NAME)
+
+pref: all clean
 
 $(NAME):
 	gcc $(FLAGS) -c $(SRC)

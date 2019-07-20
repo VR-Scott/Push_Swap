@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 16:30:21 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/19 16:50:20 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/20 16:27:21 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,61 +37,62 @@ typedef struct	s_moves
 	char		*c_rot;
 }				t_moves;
 
-/* push_swap.h */			//DElete this and the function.
-
-void	ft_print_stacks(t_stacks *stacks);
-
-/* make_stacks.c*/
-
-void		make_stacks(t_stacks *stacks, char *str);
-
-/* struct_mans */
-
-int			is_sorted(int *stack, int size);
-void		free_stacks(t_stacks *stacks);
-void		free_moves(t_moves *moves);
-
-/* apply_ins.c */
-
-void		apply_sa(t_stacks *stacks);
-void		apply_sb(t_stacks *stacks);
-void		apply_ss(t_stacks *stacks);
-void		apply_pa(t_stacks *stacks);
-void		apply_pb(t_stacks *stacks);
-
-/* sort.c */
-
-void		sort(t_stacks *stacks);
-
-/* sort_help.c */
-
-void		min_first(t_stacks *stacks);
-int			find_max(int *stack, int size);
-int			find_min(int *stack, int size);
-
-/* apply_rr.c */
-
-void	apply_ra(t_stacks *stacks);
-void	apply_rb(t_stacks *stacks);
-void	apply_rr(t_stacks *stacks);
-
-/* apply_rrr.c */
-
-void	apply_rra(t_stacks *stacks);
-void	apply_rrb(t_stacks *stacks);
-void	apply_rrr(t_stacks *stacks);
-
-/* find_rot.c */
-
-int	find_a_rot(int len, int pos, char **rot);
-int	find_b_rot(int len, int pos, char **rot);
-
-/* large_sort.c */
-
-void	large_sort(t_stacks *stacks);
-
-/* least_moves_a_2_b.c */
-
+/*
+** push_swap.h
+*/
+void			ft_print_stacks(t_stacks *stacks);
+/*
+** make_stacks.c
+*/
+void			make_stacks(t_stacks *stacks, char *str);
+/*
+** struct_mans
+*/
+int				is_sorted(int *stack, int size);
+void			free_stacks(t_stacks *stacks);
+void			free_moves(t_moves *moves);
+/*
+** apply_ins.c
+*/
+void			apply_sa(t_stacks *stacks);
+void			apply_sb(t_stacks *stacks);
+void			apply_ss(t_stacks *stacks);
+void			apply_pa(t_stacks *stacks);
+void			apply_pb(t_stacks *stacks);
+/*
+** sort.c
+*/
+void			sort(t_stacks *stacks);
+/*
+** sort_help.c
+*/
+void			min_first(t_stacks *stacks);
+int				find_max(int *stack, int size);
+int				find_min(int *stack, int size);
+/*
+** apply_rr.c
+*/
+void			apply_ra(t_stacks *stacks);
+void			apply_rb(t_stacks *stacks);
+void			apply_rr(t_stacks *stacks);
+/*
+** apply_rrr.c
+*/
+void			apply_rra(t_stacks *stacks);
+void			apply_rrb(t_stacks *stacks);
+void			apply_rrr(t_stacks *stacks);
+/*
+** find_rot.c
+*/
+int				find_a_rot(int len, int pos, char **rot);
+int				find_b_rot(int len, int pos, char **rot);
+/*
+** large_sort.c
+*/
+void			large_sort(t_stacks *stacks);
+/*
+** least_moves_a_2_b.c
+*/
 t_moves			*least_moves_a_2_b(t_stacks *stacks);
 
 #endif

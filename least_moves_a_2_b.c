@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 08:55:39 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/19 12:47:14 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/20 16:02:12 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int		find_place_b(int *stack, int size, int elem, char **rot)
 	i = 0;
 	place = 0;
 	if (size == 2 && elem > stack[0] && elem < stack[size - 1])
-			place = 0;
+		place = 0;
 	else if (size == 2 && elem < stack[0] && elem > stack[size - 1])
 		place = 1;
 	else if (elem > stack[find_max(stack, size)] ||
@@ -48,7 +48,7 @@ static int		find_common(t_moves *moves)
 	if ((ft_strequ(moves->a_rot, "rra") && (ft_strequ(moves->b_rot, "rrb"))) ||
 			(ft_strequ(moves->a_rot, "ra") && (ft_strequ(moves->b_rot, "rb"))))
 	{
-		com = 
+		com =
 		(moves->a_moves > moves->b_moves ? moves->b_moves : moves->a_moves);
 		if (com)
 		{
@@ -85,7 +85,6 @@ t_moves			*least_moves_a_2_b(t_stacks *stacks)
 	t_moves	*moves;
 
 	i = 0;
-
 	while (i < stacks->a_size)
 	{
 		moves = calc_moves_a_2_b(stacks, i);

@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 08:41:50 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/19 16:49:34 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/20 15:58:12 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int			find_a_place(int *stack, int size, int elem, char **rot_type)
 	return (find_a_rot(size, place, rot_type));
 }
 
-static void push_back(t_stacks *stacks)
+static void	push_back(t_stacks *stacks)
 {
 	int		rots;
 	char	*rot_type;
@@ -75,9 +75,9 @@ static void	push_leftovers(t_stacks *stacks)
 		i = find_min(stacks->stack_a, stacks->a_size);
 		if (i == 0)
 			apply_pb(stacks);
-		else if (i  <= stacks->a_size / 2)
+		else if (i <= stacks->a_size / 2)
 			apply_ra(stacks);
-		else if (i  > stacks->a_size / 2)
+		else if (i > stacks->a_size / 2)
 			apply_rra(stacks);
 	}
 }
@@ -107,7 +107,7 @@ void		large_sort(t_stacks *stacks)
 	t_moves	*best_moves;
 	int		optimiser;
 
-	optimiser = (stacks->a_size > 200)? 50 : 2;
+	optimiser = (stacks->a_size > 200) ? 50 : 2;
 	while (stacks->b_size != 2)
 		apply_pb(stacks);
 	while (stacks->a_size > optimiser)
@@ -116,8 +116,8 @@ void		large_sort(t_stacks *stacks)
 		while (best_moves->c_moves)
 		{
 			if (ft_strequ(best_moves->c_rot, "rr"))
-					apply_rr(stacks);
-			else 
+				apply_rr(stacks);
+			else
 				apply_rrr(stacks);
 			best_moves->c_moves--;
 		}
