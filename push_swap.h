@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 16:30:21 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/20 16:27:21 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/22 16:13:53 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct	s_moves
 /*
 ** push_swap.h
 */
-void			ft_print_stacks(t_stacks *stacks);
+void			ft_print_stacks(t_stacks *stacks); // Delete this function.
 /*
 ** make_stacks.c
 */
