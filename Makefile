@@ -6,7 +6,7 @@
 #    By: vscott <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/04 16:26:49 by vscott            #+#    #+#              #
-#    Updated: 2019/07/20 17:00:14 by vscott           ###   ########.fr        #
+#    Updated: 2019/07/22 18:11:40 by vscott           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,9 +29,9 @@ LIBDIR		=	libft
 FLAGS		=	-Wall -Werror -Wextra
 
 CHSRC		=	$(CHECKER).c\
-				apply_ins.c\
-				apply_rr.c\
-				apply_rrr.c\
+				apply_ins_ch.c\
+				apply_rr_ch.c\
+				apply_rrr_ch.c\
 				struct_mans.c\
 				make_stacks.c
 

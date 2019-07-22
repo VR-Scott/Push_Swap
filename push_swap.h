@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 16:30:21 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/22 16:13:53 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/22 18:12:22 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,14 @@ void			apply_ss(t_stacks *stacks);
 void			apply_pa(t_stacks *stacks);
 void			apply_pb(t_stacks *stacks);
 /*
+** apply_ins_ch.c
+*/
+void			apply_sa_ch(t_stacks *stacks);
+void			apply_sb_ch(t_stacks *stacks);
+void			apply_ss_ch(t_stacks *stacks);
+void			apply_pa_ch(t_stacks *stacks);
+void			apply_pb_ch(t_stacks *stacks);
+/*
 ** sort.c
 */
 void			sort(t_stacks *stacks);
@@ -81,6 +89,18 @@ void			apply_rr(t_stacks *stacks);
 void			apply_rra(t_stacks *stacks);
 void			apply_rrb(t_stacks *stacks);
 void			apply_rrr(t_stacks *stacks);
+/*
+** apply_rr_ch.c
+*/
+void			apply_ra_ch(t_stacks *stacks);
+void			apply_rb_ch(t_stacks *stacks);
+void			apply_rr_ch(t_stacks *stacks);
+/*
+** apply_rrr_ch.c
+*/
+void			apply_rra_ch(t_stacks *stacks);
+void			apply_rrb_ch(t_stacks *stacks);
+void			apply_rrr_ch(t_stacks *stacks);
 /*
 ** find_rot.c
 */

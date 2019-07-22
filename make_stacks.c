@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 17:11:06 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/22 16:39:40 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/22 17:17:29 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,14 @@ void		make_stacks(t_stacks *stacks, char *str)
 	int		count;
 	int		i;
 
-	i = 0;
+	i = -1;
 	split = ft_strsplit(str, ' ');
 	count = split_count(split);
 	stacks->stack_a = (int*)malloc(sizeof(int) * count);
 	stacks->stack_b = (int*)ft_memalloc(sizeof(int) * count);
 	stacks->a_size = count;
 	stacks->b_size = 0;
-	while (i < count)
+	while (++i < count)
 	{
 		if (validate_int(split, split[i], i + 1))
 			stacks->stack_a[i] = ft_atoi(split[i]);
@@ -86,10 +86,8 @@ void		make_stacks(t_stacks *stacks, char *str)
 			free_stacks(stacks);
 			ft_putstr_fd("Error\n", 2);
 			free_split(split);
-			sleep(45);
 			exit(1);
 		}
-		i++;
 	}
 	free_split(split);
 }

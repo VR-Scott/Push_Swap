@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/20 09:57:53 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/22 16:15:35 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/22 18:17:38 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 static	int	do_rr(t_stacks *stacks, char *in)
 {
 	if (in[2] == '\0')
-		apply_rr(stacks);
-	else if (in[2] == 'a')
-		apply_rra(stacks);
-	else if (in[2] == 'b')
-		apply_rrb(stacks);
-	else if (in[2] == 'r')
-		apply_rrr(stacks);
+		apply_rr_ch(stacks);
+	else if (in[2] == 'a' && in[3] == '\0')
+		apply_rra_ch(stacks);
+	else if (in[2] == 'b' && in[3] == '\0')
+		apply_rrb_ch(stacks);
+	else if (in[2] == 'r' && in[3] == '\0')
+		apply_rrr_ch(stacks);
 	else
 		return (-1);
 	return (0);
@@ -35,19 +35,19 @@ static	int	do_ins(t_stacks *stacks, char *in)
 			return (-1);
 	}
 	else if (ft_strequ(in, "sa"))
-		apply_sa(stacks);
+		apply_sa_ch(stacks);
 	else if (ft_strequ(in, "sb"))
-		apply_sb(stacks);
+		apply_sb_ch(stacks);
 	else if (ft_strequ(in, "ss"))
-		apply_ss(stacks);
+		apply_ss_ch(stacks);
 	else if (ft_strequ(in, "pa"))
-		apply_pa(stacks);
+		apply_pa_ch(stacks);
 	else if (ft_strequ(in, "pb"))
-		apply_pb(stacks);
+		apply_pb_ch(stacks);
 	else if (ft_strequ(in, "ra"))
-		apply_ra(stacks);
+		apply_ra_ch(stacks);
 	else if (ft_strequ(in, "rb"))
-		apply_rb(stacks);
+		apply_rb_ch(stacks);
 	else
 		return (-1);
 	return (0);
@@ -57,20 +57,20 @@ static void	get_ins(t_stacks *stacks)
 {
 	char *in;
 
+	in = NULL;
 	while (get_next_line(0, &in) > 0)
 	{
 		if (do_ins(stacks, in))
 		{
 			ft_putstr_fd("Error\n", 2);
 			free_stacks(stacks);
-			free(in);
+			ft_strdel(&in);
 			exit(1);
 		}
-		free(in);
-		in = NULL;
+		ft_strdel(&in);
 	}
 	if (in)
-		free(in);
+		ft_strdel(&in);
 }
 
 int			main(int ac, char **av)
@@ -81,7 +81,7 @@ int			main(int ac, char **av)
 	{
 		stacks = (t_stacks*)malloc(sizeof(t_stacks));
 		make_stacks(stacks, av[1]);
-		if (!(is_sorted(stacks->stack_a, stacks->a_size)))
+	//	if (!(is_sorted(stacks->stack_a, stacks->a_size)))
 			get_ins(stacks);
 		if (is_sorted(stacks->stack_a, stacks->a_size) && stacks->b_size == 0)
 			ft_putstr("OK\n");

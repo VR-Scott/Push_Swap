@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 11:53:29 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/18 12:21:18 by vscott           ###   ########.fr       */
+/*   Updated: 2019/07/22 17:32:05 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,15 @@ int		is_sorted(int *stack, int size)
 
 void	free_stacks(t_stacks *stacks)
 {
-	free(stacks->stack_a);
-	free(stacks->stack_b);
-	free(stacks);
-	stacks = NULL;
+	if (stacks->stack_a)
+		free(stacks->stack_a);
+	if (stacks->stack_b)
+		free(stacks->stack_b);
+	if (stacks)
+	{
+		free(stacks);
+		stacks = NULL;
+	}
 }
 
 void	free_moves(t_moves *moves)

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   apply_rr.c                                         :+:      :+:    :+:   */
+/*   apply_rr_ch.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/17 15:39:03 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/22 17:34:26 by vscott           ###   ########.fr       */
+/*   Created: 2019/07/22 18:05:50 by vscott            #+#    #+#             */
+/*   Updated: 2019/07/22 18:06:11 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	apply_ra(t_stacks *stacks)
+void	apply_ra_ch(t_stacks *stacks)
 {
 	int i;
 	int tmp;
@@ -27,10 +27,9 @@ void	apply_ra(t_stacks *stacks)
 		i++;
 	}
 	stacks->stack_a[i - 1] = tmp;
-	ft_putstr("ra\n");
 }
 
-void	apply_rb(t_stacks *stacks)
+void	apply_rb_ch(t_stacks *stacks)
 {
 	int i;
 	int tmp;
@@ -45,10 +44,9 @@ void	apply_rb(t_stacks *stacks)
 		i++;
 	}
 	stacks->stack_b[i - 1] = tmp;
-	ft_putstr("rb\n");
 }
 
-void	apply_rr(t_stacks *stacks)
+void	apply_rr_ch(t_stacks *stacks)
 {
 	int i;
 	int tmp;
@@ -74,5 +72,4 @@ void	apply_rr(t_stacks *stacks)
 		}
 		stacks->stack_b[i - 1] = tmp;
 	}
-	ft_putstr("rr\n");
 }
