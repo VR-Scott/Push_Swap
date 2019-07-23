@@ -6,7 +6,7 @@
 #    By: vscott <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/27 14:25:03 by vscott            #+#    #+#              #
-#    Updated: 2019/07/20 12:59:50 by vscott           ###   ########.fr        #
+#    Updated: 2019/07/23 16:22:20 by vscott           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,7 @@ OBJ		=	$(SRC:%.c=%.o)
 
 all: $(NAME)
 
-pref: all clean
+pref: re clean
 
 $(NAME):
 	gcc $(FLAGS) -c $(SRC)

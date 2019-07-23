@@ -6,7 +6,7 @@
 #    By: vscott <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/04 16:26:49 by vscott            #+#    #+#              #
-#    Updated: 2019/07/22 18:11:40 by vscott           ###   ########.fr        #
+#    Updated: 2019/07/23 16:58:34 by vscott           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,9 @@ ARG			=	"pb pb ss ra ra pa rra rra pa"
 
 LST			=	"44 11 33 22 55 "
 
-CHECKER		=	checker
+NAME_1		=	checker
 
-CHECKERX		=	checkerx
-
-NAME		=	push_swap
-
-NAMEX		=	push_swapx
+NAME_2		=	push_swap
 
 LIB			=	libft.a
 
@@ -28,14 +24,14 @@ LIBDIR		=	libft
 
 FLAGS		=	-Wall -Werror -Wextra
 
-CHSRC		=	$(CHECKER).c\
+CHSRC		=	$(NAME_1).c\
 				apply_ins_ch.c\
 				apply_rr_ch.c\
 				apply_rrr_ch.c\
 				struct_mans.c\
 				make_stacks.c
 
-PSSRC		=	$(NAME).c\
+PSSRC		=	$(NAME_2).c\
 				apply_ins.c\
 				apply_rr.c\
 				apply_rrr.c\
@@ -48,9 +44,7 @@ PSSRC		=	$(NAME).c\
 				struct_mans.c
 
 
-all: $(LIB) $(CHECKERX) $(NAMEX)
-
-$(NAME): $(LIB) $(NAMEX)
+all: $(NAME_1) $(NAME_2)
 
 pref: re clean
 
@@ -64,20 +58,20 @@ $(LIB)fclean:
 $(LIB):
 	$(MAKE) -C $(LIBDIR)/
 
-$(CHECKERX):
-	gcc $(FLAGS) -o $(CHECKER) $(CHSRC) $(LIBDIR)/$(LIB)
+$(NAME_1): $(LIB)
+	gcc $(FLAGS) -o $(NAME_1) $(CHSRC) $(LIBDIR)/$(LIB)
 
-$(NAMEX):
-	gcc $(FLAGS) -o $(NAME) $(PSSRC) $(LIBDIR)/$(LIB)
+$(NAME_2): $(LIB)
+	gcc $(FLAGS) -o $(NAME_2) $(PSSRC) $(LIBDIR)/$(LIB)
 
 clean:
 	$(MAKE) clean -C $(LIBDIR)/
 
 fclean:
 	$(MAKE) fclean -C $(LIBDIR)/
-	rm -f $(CHECKER) $(NAME)
+	rm -f $(NAME_1) $(NAME_2)
 
 re: fclean all
 
 bash:
-	 ./$(NAME) $(ARG) | ./$(NAME) $(LST)
+	 ./$(NAME_2) $(ARG) | ./$(NAME_1) $(LST)
