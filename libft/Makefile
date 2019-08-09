@@ -6,7 +6,7 @@
 #    By: vscott <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/27 14:25:03 by vscott            #+#    #+#              #
-#    Updated: 2019/08/09 10:03:17 by vscott           ###   ########.fr        #
+#    Updated: 2019/08/09 11:20:18 by vscott           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@ NAME		=	libft.a
 FLAGS		=	-Wall -Werror -Wextra
 
 SRC_PATH	=	./src/
+
+OBJ_PATH	=	./obj/
 
 SRCC 		=	ft_atoi.c\
 			ft_atoll.c\
@@ -92,11 +94,12 @@ OBJ		=	$(patsubst %.c, %.o, $(SRC))
 
 all: $(NAME)
 
-pref: re clean
-
-$(NAME): $(SRCO)
+$(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
+
+$(SRC_PATH)%.o: $(SRC_PATH)%.c
+	gcc $(FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
@@ -105,3 +108,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
