@@ -6,15 +6,17 @@
 #    By: vscott <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/27 14:25:03 by vscott            #+#    #+#              #
-#    Updated: 2019/07/23 16:22:20 by vscott           ###   ########.fr        #
+#    Updated: 2019/08/09 10:03:17 by vscott           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	libft.a
+NAME		=	libft.a
 
-FLAGS	=	-Wall -Werror -Wextra
+FLAGS		=	-Wall -Werror -Wextra
 
-SRC 	=	ft_atoi.c\
+SRC_PATH	=	./src/
+
+SRCC 		=	ft_atoi.c\
 			ft_atoll.c\
 			ft_bzero.c\
 			ft_freejoin.c\
@@ -83,17 +85,17 @@ SRC 	=	ft_atoi.c\
 			ft_tolower.c\
 			ft_toupper.c
 
-OBJ		=	$(SRC:%.c=%.o)
 
+SRC 	=	$(addprefix $(SRC_PATH), $(SRCC))
 
+OBJ		=	$(patsubst %.c, %.o, $(SRC))
 
 all: $(NAME)
 
 pref: re clean
 
-$(NAME):
-	gcc $(FLAGS) -c $(SRC)
-	ar rcs $(NAME) $(OBJ)
+$(NAME): $(SRCO)
+	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 clean:
