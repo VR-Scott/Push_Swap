@@ -6,7 +6,7 @@
 #    By: vscott <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/27 14:25:03 by vscott            #+#    #+#              #
-#    Updated: 2019/08/09 11:20:18 by vscott           ###   ########.fr        #
+#    Updated: 2019/08/09 15:17:46 by vscott           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,9 +88,9 @@ SRCC 		=	ft_atoi.c\
 			ft_toupper.c
 
 
-SRC 	=	$(addprefix $(SRC_PATH), $(SRCC))
+OBJC 	=	$(addprefix $(OBJ_PATH), $(SRCC))
 
-OBJ		=	$(patsubst %.c, %.o, $(SRC))
+OBJ		=	$(patsubst %.c, %.o, $(OBJC))
 
 all: $(NAME)
 
@@ -98,7 +98,7 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
-$(SRC_PATH)%.o: $(SRC_PATH)%.c
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	gcc $(FLAGS) -c $< -o $@
 
 clean:

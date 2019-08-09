@@ -6,14 +6,14 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 16:30:21 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/22 18:12:22 by vscott           ###   ########.fr       */
+/*   Updated: 2019/08/09 15:19:58 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "../libft/src/libft.h"
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
 
