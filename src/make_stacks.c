@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 17:11:06 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/22 17:17:29 by vscott           ###   ########.fr       */
+/*   Updated: 2019/08/10 09:58:47 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,8 @@ void		make_stacks(t_stacks *stacks, char *str)
 		else
 		{
 			free_stacks(stacks);
-			ft_putstr_fd("Error\n", 2);
 			free_split(split);
+			ft_putstr_fd("Error\n", 2);
 			exit(1);
 		}
 	}
