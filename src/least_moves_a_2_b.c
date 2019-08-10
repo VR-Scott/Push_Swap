@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 08:55:39 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/20 16:02:12 by vscott           ###   ########.fr       */
+/*   Updated: 2019/08/10 11:17:40 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,11 +92,11 @@ t_moves			*least_moves_a_2_b(t_stacks *stacks)
 			best_moves = moves;
 		else if (best_moves->tot > moves->tot)
 		{
-			free_moves(best_moves);
+			del_moves(&best_moves);
 			best_moves = moves;
 		}
 		else
-			free_moves(moves);
+			del_moves(&moves);
 		i++;
 	}
 	return (best_moves);

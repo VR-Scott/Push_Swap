@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 08:41:50 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/20 15:58:12 by vscott           ###   ########.fr       */
+/*   Updated: 2019/08/10 11:17:10 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ void		large_sort(t_stacks *stacks)
 		}
 		process_moves(best_moves, stacks);
 		apply_pb(stacks);
-		free_moves(best_moves);
+		del_moves(&best_moves);
 	}
 	push_leftovers(stacks);
 	push_back(stacks);

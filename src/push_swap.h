@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 16:30:21 by vscott            #+#    #+#             */
-/*   Updated: 2019/08/09 15:19:58 by vscott           ###   ########.fr       */
+/*   Updated: 2019/08/10 11:22:56 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void			make_stacks(t_stacks *stacks, char *str);
 ** struct_mans
 */
 int				is_sorted(int *stack, int size);
-void			free_stacks(t_stacks *stacks);
-void			free_moves(t_moves *moves);
+void			del_stacks(t_stacks **stacks);
+void			del_moves(t_moves **moves);
 /*
 ** apply_ins.c
 */

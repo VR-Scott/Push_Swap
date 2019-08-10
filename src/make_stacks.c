@@ -6,23 +6,23 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 17:11:06 by vscott            #+#    #+#             */
-/*   Updated: 2019/08/10 09:58:47 by vscott           ###   ########.fr       */
+/*   Updated: 2019/08/10 11:14:20 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		free_split(char **split)
+static void	del_split(char ***split)
 {
 	int	i;
 
 	i = 0;
-	if (split)
+	if (*split)
 	{
-		while (split[i])
-			free(split[i++]);
-		free(split);
-		split = NULL;
+		while ((*split)[i])
+			free((*split)[i++]);
+		free(*split);
+		*split = NULL;
 	}
 }
 
@@ -83,11 +83,11 @@ void		make_stacks(t_stacks *stacks, char *str)
 			stacks->stack_a[i] = ft_atoi(split[i]);
 		else
 		{
-			free_stacks(stacks);
-			free_split(split);
+			del_stacks(&stacks);
+			del_split(&split);
 			ft_putstr_fd("Error\n", 2);
 			exit(1);
 		}
 	}
-	free_split(split);
+	del_split(&split);
 }
