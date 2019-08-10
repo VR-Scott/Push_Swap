@@ -6,7 +6,7 @@
 #    By: vscott <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/04 16:26:49 by vscott            #+#    #+#              #
-#    Updated: 2019/08/09 15:43:42 by vscott           ###   ########.fr        #
+#    Updated: 2019/08/10 09:31:31 by vscott           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,26 +52,30 @@ PSO = $(patsubst %.c, %.o, $(PSC))
 all: $(NAME_1) $(NAME_2)
 
 libft:
-	$(MAKE) -C $(LIB_PATH)/
+	@$(MAKE) -C $(LIB_PATH)/
 
 $(NAME_1): $(CHO) libft
-	gcc $(FLAGS) $(CHO) -L $(LIB_PATH) -lft -o $(NAME_1) 
+	@gcc $(FLAGS) $(CHO) -L $(LIB_PATH) -lft -o $(NAME_1) 
+	@echo "$(NAME_1) Created."
 
 $(NAME_2): $(PSO) libft
-	gcc $(FLAGS) $(PSO) -L $(LIB_PATH) -lft -o $(NAME_2) 
+	@gcc $(FLAGS) $(PSO) -L $(LIB_PATH) -lft -o $(NAME_2) 
+	@echo "$(NAME_2) Created."
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	gcc $(FLAGS) -c $< -o $@
+	@gcc $(FLAGS) -c $< -o $@
 
 clean:
-	$(MAKE) -C $(LIB_PATH)/ clean
-	rm -f $(CHO)
-	rm -f $(PSO)
+	@$(MAKE) -C $(LIB_PATH)/ clean
+	@rm -f $(CHO)
+	@rm -f $(PSO)
+	@echo "Objects Files Removed"
 
 fclean:
-	rm -f $(CHO)
-	rm -f $(PSO) 
-	$(MAKE) -C $(LIB_PATH)/ fclean
+	@rm -f $(CHO)
+	@rm -f $(PSO) 
+	@echo "Objects Files Removed"
+	@$(MAKE) -C $(LIB_PATH)/ fclean
 	rm -f $(NAME_1) $(NAME_2)
 
 re: fclean all

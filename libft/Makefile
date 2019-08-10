@@ -6,7 +6,7 @@
 #    By: vscott <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/27 14:25:03 by vscott            #+#    #+#              #
-#    Updated: 2019/08/09 15:17:46 by vscott           ###   ########.fr        #
+#    Updated: 2019/08/10 09:18:24 by vscott           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -95,14 +95,16 @@ OBJ		=	$(patsubst %.c, %.o, $(OBJC))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
+	@ar rc $(NAME) $(OBJ)
+	@echo "Libft Compiled."
 	ranlib $(NAME)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	gcc $(FLAGS) -c $< -o $@
+	@gcc $(FLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
+	@echo "Libft Object Files Removed."
 
 fclean: clean
 	rm -f $(NAME)
