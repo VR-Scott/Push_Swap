@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 16:30:21 by vscott            #+#    #+#             */
-/*   Updated: 2019/08/10 11:22:56 by vscott           ###   ########.fr       */
+/*   Updated: 2019/08/10 15:01:11 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void			ft_print_stacks(t_stacks *stacks); // Delete this function.
 /*
 ** make_stacks.c
 */
-void			make_stacks(t_stacks *stacks, char *str);
+void			check_av(t_stacks *stacks, char **av, int ac);
 /*
 ** struct_mans
 */

@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/20 09:57:53 by vscott            #+#    #+#             */
-/*   Updated: 2019/08/10 11:25:48 by vscott           ###   ########.fr       */
+/*   Updated: 2019/08/10 14:58:04 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int			main(int ac, char **av)
 	if (ac > 1)
 	{
 		stacks = (t_stacks*)malloc(sizeof(t_stacks));
-		make_stacks(stacks, av[1]);
+		check_av(stacks, av, ac);
 		get_ins(stacks);
 		if (is_sorted(stacks->stack_a, stacks->a_size) && stacks->b_size == 0)
 			ft_putstr("OK\n");
