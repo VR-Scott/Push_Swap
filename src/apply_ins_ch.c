@@ -6,7 +6,7 @@
 /*   By: vscott <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 18:04:36 by vscott            #+#    #+#             */
-/*   Updated: 2019/07/22 18:04:46 by vscott           ###   ########.fr       */
+/*   Updated: 2019/08/11 10:18:12 by vscott           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	apply_pa_ch(t_stacks *stacks)
 		stacks->stack_a[i + 1] = stacks->stack_a[i];
 	stacks->stack_a[0] = stacks->stack_b[0];
 	i = 0;
-	while (i++ <= stacks->b_size)
+	while (i++ <= stacks->b_size - 1)
 		stacks->stack_b[i - 1] = stacks->stack_b[i];
 	stacks->a_size++;
 	stacks->b_size--;
