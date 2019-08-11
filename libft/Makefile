@@ -6,7 +6,7 @@
 #    By: vscott <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/27 14:25:03 by vscott            #+#    #+#              #
-#    Updated: 2019/08/10 09:18:24 by vscott           ###   ########.fr        #
+#    Updated: 2019/08/11 09:19:28 by vscott           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ FLAGS		=	-Wall -Werror -Wextra
 SRC_PATH	=	./src/
 
 OBJ_PATH	=	./obj/
+
+OBJ_DIR         =   obj
 
 SRCC 		=	ft_atoi.c\
 			ft_atoll.c\
@@ -94,7 +96,10 @@ OBJ		=	$(patsubst %.c, %.o, $(OBJC))
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(OBJ_DIR):
+	@mkdir $(OBJ_DIR)
+
+$(NAME): $(OBJ_DIR) $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 	@echo "Libft Compiled."
 	ranlib $(NAME)
@@ -103,7 +108,7 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@gcc $(FLAGS) -c $< -o $@
 
 clean:
-	@rm -f $(OBJ)
+	@rm -rf $(OBJ_DIR)
 	@echo "Libft Object Files Removed."
 
 fclean: clean
