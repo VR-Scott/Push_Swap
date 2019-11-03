@@ -1,6 +1,6 @@
 Push_Swap
 
-For a full description of the Project please read push_swap.en.pdf.
+For a full description of the Project please read resources/push_swap.en.pdf.
 
 This project consists of two programs, create by running "Make all".
 
